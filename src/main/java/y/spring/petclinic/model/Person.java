@@ -1,4 +1,4 @@
-package pl.ymz.spring.yspringpetclinic.model;
+package y.spring.petclinic.model;
 
 public class Person {
 

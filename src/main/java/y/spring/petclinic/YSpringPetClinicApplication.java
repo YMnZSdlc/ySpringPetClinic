@@ -1,4 +1,4 @@
-package pl.ymz.spring.yspringpetclinic;
+package y.spring.petclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

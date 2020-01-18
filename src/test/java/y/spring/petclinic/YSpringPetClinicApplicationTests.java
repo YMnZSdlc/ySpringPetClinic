@@ -1,4 +1,4 @@
-package pl.ymz.spring.yspringpetclinic;
+package y.spring.petclinic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
