@@ -19,3 +19,5 @@
 /ySpringPetClinic.iml
 /.mvn/
 /target/
+/petclinic-data/target/
+/petclinic-web/target/
