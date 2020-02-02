@@ -10,5 +10,4 @@ public class VetController {
     public String listVets() {
         return "vets/index";
     }
-
 }
