@@ -1,36 +1,31 @@
 package y.spring.petclinic.services.map;
 
 import org.springframework.stereotype.Service;
-import y.spring.petclinic.model.Owner;
-import y.spring.petclinic.services.OwnerService;
+import y.spring.petclinic.model.PetType;
+import y.spring.petclinic.services.PetTypeService;
 
 import java.util.Set;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
-    public Owner findByLastName(String lastName) {
-        return null;
-    }
-
-    @Override
-    public Set<Owner> findAll() {
+    public Set<PetType> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Owner findById(Long id) {
+    public PetType findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Owner save(Owner object) {
+    public PetType save(PetType object) {
         return super.save(object);
     }
 
     @Override
-    public void delete(Owner object) {
+    public void delete(PetType object) {
         super.delete(object);
     }
 

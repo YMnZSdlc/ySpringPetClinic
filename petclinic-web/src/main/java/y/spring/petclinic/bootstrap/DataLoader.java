@@ -1,14 +1,11 @@
 package y.spring.petclinic.bootstrap;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import y.spring.petclinic.model.Owner;
 import y.spring.petclinic.model.Vet;
 import y.spring.petclinic.services.OwnerService;
 import y.spring.petclinic.services.VetService;
-import y.spring.petclinic.services.map.OwnerServiceMap;
-import y.spring.petclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
