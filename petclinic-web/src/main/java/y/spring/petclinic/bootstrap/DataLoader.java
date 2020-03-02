@@ -3,11 +3,14 @@ package y.spring.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import y.spring.petclinic.model.Owner;
+import y.spring.petclinic.model.Pet;
 import y.spring.petclinic.model.PetType;
 import y.spring.petclinic.model.Vet;
 import y.spring.petclinic.services.OwnerService;
 import y.spring.petclinic.services.PetTypeService;
 import y.spring.petclinic.services.VetService;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -45,6 +48,11 @@ public class DataLoader implements CommandLineRunner {
         owner1.setAddress("Aleksandrowska 1");
         owner1.setCity("Aleksandrów Łódzki");
         owner1.setTelephone("111 111 111");
+        Pet petDog = new Pet();
+        petDog.setName("Pieseł");
+        petDog.setPetType(savedDog);
+        petDog.setOwner(owner1);
+        petDog.setBirthDate(LocalDate.of(2011,1,11));
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
@@ -53,6 +61,11 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("Biała 2");
         owner2.setCity("Bełchatów");
         owner2.setTelephone("222 222 222");
+        Pet petCat = new Pet();
+        petCat.setName("Koteł");
+        petCat.setPetType(savedCat);
+        petCat.setOwner(owner2);
+        petCat.setBirthDate(LocalDate.now());
         ownerService.save(owner2);
 
         Owner owner3 = new Owner();
@@ -61,6 +74,11 @@ public class DataLoader implements CommandLineRunner {
         owner3.setAddress("Czerwona 2");
         owner3.setCity("Cedynia");
         owner3.setTelephone("333 333 333");
+        Pet petPig = new Pet();
+        petPig.setName("Świneł");
+        petPig.setPetType(savedPig);
+        petPig.setOwner(owner3);
+        petPig.setBirthDate(LocalDate.of(2018,8,10));
         ownerService.save(owner3);
 
         System.out.println("Loaded Owners...");
