@@ -27,4 +27,10 @@ public class OwnerController {
                 .collect(Collectors.toList()));
         return "owners/index";
     }
+
+    @RequestMapping("/find")
+    public String findOwners(){
+        return "notimpl";
+    }
+
 }
