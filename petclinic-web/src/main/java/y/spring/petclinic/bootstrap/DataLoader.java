@@ -51,6 +51,20 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Pet Types...");
 
+        Speciality radiology = new Speciality();
+        radiology.setDescription("Radiologia");
+        Speciality savedRadiology = specialityService.save(radiology);
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("Chirurgia");
+        Speciality savedSurgery = specialityService.save(surgery);
+
+        Speciality dentistry = new Speciality();
+        dentistry.setDescription("Dentystyka");
+        Speciality savedDentistry = specialityService.save(dentistry);
+
+        System.out.println("Loaded Vets Specialities...");
+
         Owner owner1 = new Owner();
         owner1.setFirstName("Andrzej");
         owner1.setLastName("Andrzejewski");
@@ -91,20 +105,6 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner3);
 
         System.out.println("Loaded Owners...");
-
-        Speciality radiology = new Speciality();
-        radiology.setDescription("Radiologia");
-        Speciality savedRadiology = specialityService.save(radiology);
-
-        Speciality surgery = new Speciality();
-        surgery.setDescription("Chirurgia");
-        Speciality savedSurgery = specialityService.save(surgery);
-
-        Speciality dentistry = new Speciality();
-        dentistry.setDescription("Dentystyka");
-        Speciality savedDentistry = specialityService.save(dentistry);
-
-        System.out.println("Loaded Vets Specialities...");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Daniel");
