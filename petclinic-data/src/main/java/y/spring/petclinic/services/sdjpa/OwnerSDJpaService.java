@@ -41,8 +41,6 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner findById(Long aLong) {
-//        Optional<Owner> optionalowner = ownerRepository.findById(aLong);
-//        return optionalowner.orElse(null);
         return ownerRepository.findById(aLong).orElse(null);
     }
 
