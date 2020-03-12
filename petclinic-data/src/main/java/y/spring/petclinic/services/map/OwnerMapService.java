@@ -11,7 +11,7 @@ import y.spring.petclinic.services.PetTypeService;
 import java.util.Set;
 
 @Service
-@Profile({"default","map"})
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
@@ -20,11 +20,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     public OwnerMapService(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
-    }
-
-    @Override
-    public Owner findByLastName(String lastName) {
-        return null;
     }
 
     @Override
@@ -71,5 +66,14 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return this.findAll()
+                .stream()
+                .filter(o -> o.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 }

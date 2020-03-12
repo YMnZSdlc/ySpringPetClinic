@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import y.spring.petclinic.model.*;
 import y.spring.petclinic.services.*;
 
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 @Component
@@ -144,7 +143,5 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet3);
 
         System.out.println("Loaded Vets...");
-
-
     }
 }
