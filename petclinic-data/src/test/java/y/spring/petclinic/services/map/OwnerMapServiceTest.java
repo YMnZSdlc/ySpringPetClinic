@@ -46,10 +46,10 @@ class OwnerMapServiceTest {
 
     @Test
     void saveNoId() {
-        Owner ownerToSave = ownerMapService.save(Owner.builder().build());
+        Owner savedOwner = ownerMapService.save(Owner.builder().build());
 
-        assertNotNull(ownerToSave);
-        assertNotNull(ownerToSave.getId());
+        assertNotNull(savedOwner);
+        assertNotNull(savedOwner.getId());
     }
 
     @Test

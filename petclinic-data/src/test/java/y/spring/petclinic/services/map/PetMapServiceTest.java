@@ -45,10 +45,10 @@ class PetMapServiceTest {
 
     @Test
     void saveNoId() {
-        Pet petToSave = petMapService.save(Pet.builder().build());
+        Pet savedPet = petMapService.save(Pet.builder().build());
 
-        assertNotNull(petToSave);
-        assertNotNull(petToSave.getId());
+        assertNotNull(savedPet);
+        assertNotNull(savedPet.getId());
     }
 
     @Test
