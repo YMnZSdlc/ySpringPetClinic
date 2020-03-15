@@ -2,11 +2,14 @@ package y.spring.petclinic.services.map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import y.spring.petclinic.model.Owner;
+import y.spring.petclinic.model.Pet;
 import y.spring.petclinic.model.Visit;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class VisitMapServiceTest {
 
@@ -17,14 +20,14 @@ class VisitMapServiceTest {
     @BeforeEach
     void setUp() {
         visitMapService = new VisitMapService();
-        visitMapService.save(Visit.builder().id(visitId).build());
+        visitMapService.save(Visit.builder().id(visitId).pet(Pet.builder().owner(Owner.builder().build()).build()).build());
     }
 
     @Test
     void findAll() {
         Set<Visit> visitAll = visitMapService.findAll();
 
-        assertEquals(1,visitAll.size());
+        assertEquals(1, visitAll.size());
     }
 
     @Test
@@ -40,7 +43,7 @@ class VisitMapServiceTest {
         Visit visitToSave = Visit.builder().id(id).build();
         Visit savedVisit = visitMapService.save(visitToSave);
 
-        assertEquals(id,savedVisit.getId());
+        assertEquals(id, savedVisit.getId());
     }
 
     @Test
@@ -55,13 +58,13 @@ class VisitMapServiceTest {
     void delete() {
         visitMapService.delete(visitMapService.findById(visitId));
 
-        assertEquals(0,visitMapService.findAll().size());
+        assertEquals(0, visitMapService.findAll().size());
     }
 
     @Test
     void deleteById() {
         visitMapService.deleteById(visitId);
 
-        assertEquals(0,visitMapService.findAll().size());
+        assertEquals(0, visitMapService.findAll().size());
     }
 }

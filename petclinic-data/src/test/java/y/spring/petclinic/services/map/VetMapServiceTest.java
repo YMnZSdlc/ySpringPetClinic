@@ -2,18 +2,17 @@ package y.spring.petclinic.services.map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import y.spring.petclinic.model.Speciality;
 import y.spring.petclinic.model.Vet;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class VetMapServiceTest {
 
-    VetMapService vetMapService;
-
     final Long vetId = 1L;
+    VetMapService vetMapService;
 
     @BeforeEach
     void setUp() {
@@ -32,7 +31,7 @@ class VetMapServiceTest {
     void findById() {
         Vet vetById = vetMapService.findById(vetId);
 
-        assertEquals(vetId,vetById.getId());
+        assertEquals(vetId, vetById.getId());
     }
 
     @Test
@@ -41,7 +40,7 @@ class VetMapServiceTest {
         Vet vetToSave = Vet.builder().id(id).build();
         Vet savedVet = vetMapService.save(vetToSave);
 
-        assertEquals(id,savedVet.getId());
+        assertEquals(id, savedVet.getId());
     }
 
     @Test
@@ -56,13 +55,13 @@ class VetMapServiceTest {
     void delete() {
         vetMapService.delete(vetMapService.findById(vetId));
 
-        assertEquals(0,vetMapService.findAll().size());
+        assertEquals(0, vetMapService.findAll().size());
     }
 
     @Test
     void deleteById() {
         vetMapService.deleteById(vetId);
 
-        assertEquals(0,vetMapService.findAll().size());
+        assertEquals(0, vetMapService.findAll().size());
     }
 }
