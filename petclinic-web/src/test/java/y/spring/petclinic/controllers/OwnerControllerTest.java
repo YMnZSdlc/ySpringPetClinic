@@ -60,7 +60,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFromReturnMany() throws Exception {
-        when(ownerService.findAllByLastNameLike(anyString()))
+        when(ownerService.findAllByLastNameIgnoreCase(anyString()))
                 .thenReturn(owners.stream().collect(Collectors.toList()));
 
         mockMvc.perform(get("/owners"))
@@ -71,7 +71,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFromReturnOne() throws Exception {
-        when(ownerService.findAllByLastNameLike(anyString()))
+        when(ownerService.findAllByLastNameIgnoreCase(anyString()))
                 .thenReturn(Arrays.asList(Owner.builder().id(1L).build()));
 
         mockMvc.perform(get("/owners"))

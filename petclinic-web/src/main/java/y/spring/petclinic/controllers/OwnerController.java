@@ -12,9 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import y.spring.petclinic.model.Owner;
 import y.spring.petclinic.services.OwnerService;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RequestMapping("/owners")
 @Controller
@@ -43,7 +41,7 @@ public class OwnerController {
             owner.setLastName("");
         }
 
-        List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> results = ownerService.findAllByLastNameIgnoreCase("%" + owner.getLastName() + "%");
 
         if (results.isEmpty()) {
             result.rejectValue("lastName", "notFound", "not found");
